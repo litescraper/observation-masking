@@ -369,7 +369,7 @@ class SerperServiceBrowserBackend:
 
     def __init__(self):
         self.api_key = os.getenv("SERPER_API_KEY")
-        self.search_url = "https://google.serper.dev/search"
+        self.search_url = f'{os.getenv("SERPER_BASE_URL", "https://google.serper.dev").rstrip("/")}/search'
         self.scrape_url = "https://scrape.serper.dev/"
 
     # Maps Unicode block ranges → (gl country code, hl language code)
